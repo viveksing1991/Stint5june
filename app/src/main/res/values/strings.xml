@@ -5,4 +5,6 @@
     <string name="tv_forgot_password_text">Forgot Password ?</string>
     <string name="btn_fb_login_text">Login with Facebook</string>
     <string name="btn_gplus_login_text">Login with Google+</string>
+    <string name="btn_registrtion_done">Done</string>
+    <string name="btn_registration_confmpswd_text">Confirm Password</string>
 </resources>
