@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Stint</string>
+    <string name="btn_login_text">Login</string>
+    <string name="btn_register_text">Register</string>
+    <string name="tv_forgot_password_text">Forgot Password ?</string>
+    <string name="btn_fb_login_text">Login with Facebook</string>
+    <string name="btn_gplus_login_text">Login with Google+</string>
+</resources>
