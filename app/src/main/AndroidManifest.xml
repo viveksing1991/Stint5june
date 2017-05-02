@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".ui.activities.main.MainActivity"
+            android:name=".ui.activities.main.MainAct"
             android:configChanges="keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
@@ -28,9 +28,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.login.LoginActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
-        <activity android:name=".ui.activities.registration.RegistrationActivity"></activity>
+            android:name=".ui.activities.login.LoginAct"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".ui.activities.registration.RegistrationAct" />
+        <activity android:name=".ui.activities.forgotpass.ForgotPasswordAct"></activity>
     </application>
 
 </manifest>

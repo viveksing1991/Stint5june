@@ -7,4 +7,5 @@
     <string name="btn_gplus_login_text">Login with Google+</string>
     <string name="btn_registrtion_done">Done</string>
     <string name="btn_registration_confmpswd_text">Confirm Password</string>
+    <string name="tv_registration_header_text">REGISTRATIOn</string>
 </resources>

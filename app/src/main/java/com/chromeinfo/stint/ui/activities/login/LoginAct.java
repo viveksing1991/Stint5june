@@ -1,15 +1,17 @@
-package com.chromeinfo.stint.ui.activities.registration;
+package com.chromeinfo.stint.ui.activities.login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.chromeinfo.stint.R;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class LoginAct extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_login);
     }
 }

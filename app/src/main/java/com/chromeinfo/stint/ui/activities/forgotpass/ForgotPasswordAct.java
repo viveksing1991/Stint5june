@@ -1,17 +1,15 @@
-package com.chromeinfo.stint.ui.activities.login;
+package com.chromeinfo.stint.ui.activities.forgotpass;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.chromeinfo.stint.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class ForgotPasswordAct extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_forgot_password);
     }
 }

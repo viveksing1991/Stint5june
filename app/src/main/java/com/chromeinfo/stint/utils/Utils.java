@@ -1,4 +1,4 @@
-package com.example.root.stint.utils;
+package com.chromeinfo.stint.utils;
 
 import android.content.Context;
 import android.util.Log;

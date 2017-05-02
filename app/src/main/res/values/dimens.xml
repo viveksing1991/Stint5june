@@ -16,4 +16,33 @@
     <dimen name="activity_vertical_margin_register">30dp</dimen>
     <dimen name="view_line_login_width">200dp</dimen>
     <dimen name="view_line_login_height">1dp</dimen>
+
+    <dimen name="drawable_padding_20">20dp</dimen>
+
+    <!--width and height od icons -->
+
+    <dimen name="icon_image_width">17dp</dimen>
+    <dimen name="icon_image_height">17dp</dimen>
+
+
+    <!--registration  start-->
+
+    <!--Text size-->
+    <dimen name="text_size_reg">19sp</dimen>
+    <!--end text size-->
+
+    <!--margin reg-->
+    <dimen name="activity_horizontal_margin_reg">20dp</dimen>
+    <dimen name="activity_vertical_margin_reg">20dp</dimen>
+    <dimen name="activity_horizontal_margin_reg_widget">10dp</dimen>
+    <dimen name="activity_vertical_margin_reg_widget">10dp</dimen>
+
+    <!--mar End-->
+
+    <!--  height reg widget-->
+
+    <dimen name="reg_wid_height">41dp</dimen>
+    <dimen name="reg_wid_width">41dp</dimen>
+    <!--Reg end-->
+
 </resources>
