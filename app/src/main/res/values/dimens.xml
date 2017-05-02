@@ -9,7 +9,7 @@
     <dimen name="activity_horizontal_margin_btn">16dp</dimen>
     <dimen name="activity_vertical_margin_btn">16dp</dimen>
     <!--padding edittext-->
-    <dimen name="padingLogin">10dp</dimen>
+    <dimen name="padingLogin">7dp</dimen>
 
     <!--Margin Register Button-->
     <dimen name="activity_horizontal_margin_register">110dp</dimen>
@@ -44,5 +44,5 @@
     <dimen name="reg_wid_height">41dp</dimen>
     <dimen name="reg_wid_width">41dp</dimen>
     <!--Reg end-->
-
+<dimen name="activity_horizontal_padding_reg">10dp</dimen>
 </resources>
