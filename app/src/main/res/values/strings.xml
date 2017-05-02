@@ -6,6 +6,12 @@
     <string name="btn_fb_login_text">Login with Facebook</string>
     <string name="btn_gplus_login_text">Login with Google+</string>
     <string name="btn_registrtion_done">Done</string>
-    <string name="btn_registration_confmpswd_text">Confirm Password</string>
-    <string name="tv_registration_header_text">REGISTRATIOn</string>
+    <string name="btn_registration_confmpswd_text">CONFIRM PASSWORD</string>
+    <string name="tv_registration_header_text">REGISTRATION</string>
+    <string name="edt_reg_password_text">PASSWORD</string>
+    <string name="edt_reg_username_text">USERNAME</string>
+    <string name="edt_reg_phn_text">PHONE NUMBER</string>
+    <string name="edt_reg_email_text">EMAIl</string>
+    <string name="edt_reg_first_name_text">FIRST NAME</string>
+    <string name="edt_reg_last_name_text">LAST NAME</string>
 </resources>

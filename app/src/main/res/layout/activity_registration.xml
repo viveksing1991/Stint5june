@@ -44,6 +44,8 @@
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.5"
                     android:background="@drawable/detail_box"
+                    android:hint="@string/edt_reg_first_name_text"
+                    android:inputType="text"
                     android:maxLines="1"
                     android:paddingLeft="@dimen/drawable_padding_20" />
 
@@ -55,13 +57,13 @@
                     android:layout_weight="0.5"
                     android:background="@drawable/detail_box"
                     android:drawablePadding="@dimen/drawable_padding_20"
+                    android:hint="@string/edt_reg_last_name_text"
                     android:maxLines="1"
                     android:paddingLeft="@dimen/drawable_padding_20" />
             </LinearLayout>
 
 
             <EditText
-
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/reg_wid_height"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -70,6 +72,7 @@
                 android:background="@drawable/detail_box"
                 android:drawableLeft="@drawable/email_icon"
                 android:drawablePadding="@dimen/drawable_padding_20"
+                android:hint="@string/edt_reg_email_text"
                 android:inputType="text"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/drawable_padding_20"
@@ -85,6 +88,7 @@
                 android:background="@drawable/detail_box"
                 android:drawableLeft="@drawable/mobile_icon"
                 android:drawablePadding="@dimen/drawable_padding_20"
+                android:hint="@string/edt_reg_phn_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/drawable_padding_20"
@@ -100,6 +104,7 @@
                 android:background="@drawable/detail_box"
                 android:drawableLeft="@drawable/username_icon"
                 android:drawablePadding="@dimen/drawable_padding_20"
+                android:hint="@string/edt_reg_username_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
@@ -113,6 +118,7 @@
                 android:background="@drawable/detail_box"
                 android:drawableLeft="@drawable/password_icon"
                 android:drawablePadding="@dimen/drawable_padding_20"
+                android:hint="@string/edt_reg_password_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
