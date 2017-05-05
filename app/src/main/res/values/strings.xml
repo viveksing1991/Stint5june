@@ -14,4 +14,14 @@
     <string name="edt_reg_email_text">EMAIl</string>
     <string name="edt_reg_first_name_text">FIRST NAME</string>
     <string name="edt_reg_last_name_text">LAST NAME</string>
+    <string name="edt_frgtpswd_hint">Your Email</string>
+    <string name="facebook_app_id"></string>
+    <string name="btn_tut_paypl_hint">Next</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tutorial">TutorialActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
 </resources>

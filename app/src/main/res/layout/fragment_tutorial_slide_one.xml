@@ -1,13 +1,31 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chromeinfo.stint.ui.fragment.TutorialSlideOne">
+    android:background="@drawable/bgtutorial"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
+    tools:context="com.chromeinfo.stint.ui.fragment.tutorial.TutorialSlideOne">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ImageView
+        android:layout_marginBottom="@dimen/activity_horizontal_margin_register"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/logo_stint_height"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:layout_marginBottom="@dimen/activity_horizontal_margin_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/logo_stint_height"
+        android:src="@drawable/post_job_icon" />
+
+    <ImageView
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/logo_stint_height"
+        android:src="@drawable/silde_1_text" />
+
+</LinearLayout>

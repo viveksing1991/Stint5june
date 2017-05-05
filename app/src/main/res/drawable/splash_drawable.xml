@@ -3,7 +3,7 @@
     <item android:drawable="@drawable/background_stint"></item>
     <item>
         <bitmap
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:src="@drawable/logo"></bitmap>
     </item>
 </layer-list>

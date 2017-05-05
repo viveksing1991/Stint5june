@@ -1,13 +1,23 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chromeinfo.stint.ui.fragment.TutorialSlideThree">
+    android:background="@drawable/bgtutorial"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.chromeinfo.stint.ui.fragment.tutorial.TutorialSlideThree">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_reg"
+        android:src="@drawable/fair_transaction_icon" />
 
-</FrameLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_register"
+        android:src="@drawable/silde_3_text" />
+</LinearLayout>

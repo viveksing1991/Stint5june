@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    tools:context="com.chromeinfo.stint.ui.activities.login.LoginAct">
+    >
 
     <LinearLayout
-        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -25,53 +24,60 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/reg_wid_height"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:background="@drawable/detail_box"
+            android:background="@drawable/edit_text_bg"
             android:orientation="horizontal"
             android:padding="@dimen/padingLogin">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
                 android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/email_icon" />
 
             <EditText
+                android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:gravity="start|center"
+                android:hint="@string/edt_reg_email_text"
                 android:inputType="text"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/reg_wid_height"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_horizontal_margin_btn"
-            android:background="@drawable/detail_box"
+            android:background="@drawable/edit_text_bg"
             android:orientation="horizontal"
             android:padding="@dimen/padingLogin">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
                 android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/password_icon" />
 
             <EditText
+                android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:gravity="start|center"
+                android:hint="@string/edt_reg_password_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
@@ -79,6 +85,7 @@
 
 
         <Button
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -89,6 +96,7 @@
             android:textColor="@color/editTextBorder" />
 
         <Button
+            android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -100,6 +108,7 @@
             android:textColor="@color/editTextBorder" />
 
         <TextView
+            android:id="@+id/tvForgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -118,6 +127,7 @@
             android:background="@color/editTextBorder" />
 
         <View
+            android:layout_marginTop="2dp"
             android:layout_width="@dimen/view_line_login_width"
             android:layout_height="@dimen/view_line_login_height"
             android:layout_gravity="center"

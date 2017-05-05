@@ -1,8 +1,13 @@
 package com.chromeinfo.stint.utils;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.regex.Pattern;
 
 /**
  * Created by root on 1/5/17.
@@ -69,5 +74,40 @@ public class Utils {
     }
 
 
+    /**
+     * This method is created to check the email . The format of the mail is right or wrong
+     *
+     * @param email pass email addresss here
+     * @return
+     */
+    public static final boolean isValidEmail(String email) {
+        String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        return Pattern.compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$").matcher(email).matches();
+    }
+
+
+    public static void noInternetDailog(Context context) {
+        AlertDialog.Builder noInternet = new AlertDialog.Builder(context);
+        TextView title = new TextView(context);
+        title.setText("Stint");
+        title.setPadding(10, 10, 10, 10);
+        title.setGravity(17);
+        title.setTextColor(-1);
+        title.setTextSize(20.0f);
+        noInternet.setCustomTitle(title);
+        noInternet.setMessage("Network connection error.\n\nPlease verify your internet connection.");
+        noInternet.setPositiveButton("Ok", new DialogChecker());
+        noInternet.create();
+        noInternet.show();
+    }
+
+    private static class DialogChecker implements DialogInterface.OnClickListener {
+        DialogChecker() {
+        }
+
+        public void onClick(DialogInterface dialog, int id) {
+            dialog.dismiss();
+        }
+    }
 
 }

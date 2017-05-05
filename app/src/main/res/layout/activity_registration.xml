@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_stint"
-    tools:context="com.chromeinfo.stint.ui.activities.login.LoginAct">
+    tools:context="com.chromeinfo.stint.ui.activities.registration.RegistrationAct">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:orientation="vertical">
 
         <TextView
@@ -21,133 +21,199 @@
             android:gravity="center"
             android:text="@string/tv_registration_header_text"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/text_size_reg" />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/activity_horizontal_margin_reg"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="@dimen/reg_wid_height"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/edtRegFirstName"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/activity_horizontal_margin_reg"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/reg_wid_height"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/detail_box"
-                    android:hint="@string/edt_reg_first_name_text"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:paddingLeft="@dimen/drawable_padding_20" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/reg_wid_height"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/detail_box"
-                    android:drawablePadding="@dimen/drawable_padding_20"
-                    android:hint="@string/edt_reg_last_name_text"
-                    android:maxLines="1"
-                    android:paddingLeft="@dimen/drawable_padding_20" />
-            </LinearLayout>
+                android:background="@drawable/detail_box"
+                android:gravity="center"
+                android:hint="@string/edt_reg_first_name_text"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@+id/edtLastName" />
 
 
             <EditText
+                android:id="@+id/edtRegLastName"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/reg_wid_height"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_horizontal_margin_reg_widget"
+                android:layout_weight="1"
                 android:background="@drawable/detail_box"
-                android:drawableLeft="@drawable/email_icon"
-                android:drawablePadding="@dimen/drawable_padding_20"
+                android:gravity="center"
+                android:hint="@string/edt_reg_last_name_text"
+                android:inputType="text"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reg_wid_height"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@drawable/edit_text_bg"
+            android:orientation="horizontal"
+            android:padding="@dimen/padingLogin">
+
+            <ImageView
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:scaleType="centerInside"
+                android:src="@drawable/email_icon" />
+
+            <EditText
+                android:id="@+id/edtRegEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
                 android:hint="@string/edt_reg_email_text"
                 android:inputType="text"
                 android:maxLines="1"
-                android:paddingLeft="@dimen/drawable_padding_20"
-                android:paddingRight="@dimen/drawable_padding_20" />
+                android:paddingLeft="@dimen/activity_horizontal_margin" />
+        </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reg_wid_height"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_btn"
+            android:background="@drawable/edit_text_bg"
+            android:orientation="horizontal"
+            android:padding="@dimen/padingLogin">
+
+            <ImageView
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:scaleType="centerInside"
+                android:src="@drawable/mobile_icon" />
 
             <EditText
+                android:id="@+id/edtRegPhNo"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/reg_wid_height"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_horizontal_margin_reg_widget"
-                android:background="@drawable/detail_box"
-                android:drawableLeft="@drawable/mobile_icon"
-                android:drawablePadding="@dimen/drawable_padding_20"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
                 android:hint="@string/edt_reg_phn_text"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:paddingLeft="@dimen/drawable_padding_20"
-                android:paddingRight="@dimen/drawable_padding_20" />
-
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/reg_wid_height"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_horizontal_margin_reg_widget"
-                android:background="@drawable/detail_box"
-                android:drawableLeft="@drawable/username_icon"
-                android:drawablePadding="@dimen/drawable_padding_20"
-                android:hint="@string/edt_reg_username_text"
-                android:inputType="textPassword"
+                android:inputType="number"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reg_wid_height"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_btn"
+            android:background="@drawable/edit_text_bg"
+            android:orientation="horizontal"
+            android:padding="@dimen/padingLogin">
+
+            <ImageView
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:scaleType="centerInside"
+                android:src="@drawable/username_icon" />
 
             <EditText
-
+                android:id="@+id/edtRegUserName"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/reg_wid_height"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_horizontal_margin_reg_widget"
-                android:background="@drawable/detail_box"
-                android:drawableLeft="@drawable/password_icon"
-                android:drawablePadding="@dimen/drawable_padding_20"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="@string/edt_reg_username_text"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/activity_horizontal_margin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reg_wid_height"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_btn"
+            android:background="@drawable/edit_text_bg"
+            android:orientation="horizontal"
+            android:padding="@dimen/padingLogin">
+
+            <ImageView
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:scaleType="centerInside"
+                android:src="@drawable/password_icon" />
+
+            <EditText
+                android:id="@+id/edtRegPasswd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
                 android:hint="@string/edt_reg_password_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reg_wid_height"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_btn"
+            android:background="@drawable/edit_text_bg"
+            android:orientation="horizontal"
+            android:padding="@dimen/padingLogin">
+
+            <ImageView
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:scaleType="centerInside"
+                android:src="@drawable/password_icon" />
 
             <EditText
+                android:id="@+id/edtRegConfrmPasswd"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/reg_wid_height"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_horizontal_margin_reg_widget"
-                android:background="@drawable/detail_box"
-                android:drawableLeft="@drawable/password_icon"
-                android:drawablePadding="@dimen/drawable_padding_20"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:gravity="start"
                 android:hint="@string/btn_registration_confmpswd_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin_register"
-                android:layout_marginRight="@dimen/activity_horizontal_margin_register"
-                android:layout_marginTop="@dimen/activity_horizontal_margin"
-                android:background="@drawable/button_login"
-                android:text="@string/btn_registrtion_done"
-                android:textColor="@color/editTextBorder" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRegDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@drawable/button_login"
+            android:text="@string/btn_registrtion_done"
+            android:textColor="@color/editTextBorder" />
     </LinearLayout>
 </ScrollView>

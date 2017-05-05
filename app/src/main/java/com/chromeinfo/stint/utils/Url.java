@@ -5,4 +5,5 @@ package com.chromeinfo.stint.utils;
  */
 
 public class Url {
+    public static final String API_BASE_URL = "http://52.25.199.194";
 }

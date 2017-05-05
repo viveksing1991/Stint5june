@@ -1,13 +1,41 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chromeinfo.stint.ui.fragment.TutorialSlideFour">
+    android:background="@drawable/bgtutorial"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    tools:context="com.chromeinfo.stint.ui.fragment.tutorial.TutorialSlideFour">
 
-</FrameLayout>
+
+    <ImageView
+        android:id="@+id/imvPaypl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_register"
+        android:src="@drawable/pay_pal" />
+
+
+    <ImageView
+        android:id="@+id/imvSlideTut4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imvPaypl"
+        android:layout_gravity="start"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_register"
+        android:src="@drawable/silde_4_text" />
+
+    <Button
+        android:id="@+id/btnTutPaypl"
+        android:hint="@string/btn_tut_paypl_hint"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/imvSlideTut4"
+        android:layout_marginTop="@dimen/activity_horizontal_margin" />
+</RelativeLayout>

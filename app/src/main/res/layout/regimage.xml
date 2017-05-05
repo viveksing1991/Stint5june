@@ -24,26 +24,34 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="38dp"
+            android:layout_height="@dimen/reg_wid_height"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:orientation="horizontal">
 
             <EditText
+                android:inputType="text"
+                android:maxLines="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_weight="1"
-                android:background="@drawable/detail_box" />
+                android:background="@drawable/detail_box"
+                android:gravity="center"
+                android:hint="@string/edt_reg_first_name_text" />
 
 
             <EditText
+                android:inputType="text"
+                android:maxLines="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_weight="1"
-                android:background="@drawable/detail_box" />
+                android:background="@drawable/detail_box"
+                android:gravity="center"
+                android:hint="@string/edt_reg_last_name_text" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,8 +65,8 @@
             android:padding="@dimen/padingLogin">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
                 android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:scaleType="centerInside"
@@ -68,6 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:hint="@string/edt_reg_email_text"
                 android:inputType="text"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
@@ -85,17 +94,18 @@
             android:padding="@dimen/padingLogin">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
                 android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:scaleType="centerInside"
+                 android:scaleType="centerInside"
                 android:src="@drawable/mobile_icon" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:hint="@string/edt_reg_phn_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
@@ -112,8 +122,8 @@
             android:padding="@dimen/padingLogin">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
                 android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:scaleType="centerInside"
@@ -123,6 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:hint="@string/edt_reg_username_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
@@ -139,8 +150,8 @@
             android:padding="@dimen/padingLogin">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
                 android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:scaleType="centerInside"
@@ -150,6 +161,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:hint="@string/edt_reg_password_text"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
@@ -166,8 +178,8 @@
             android:padding="@dimen/padingLogin">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_image_width"
+                android:layout_height="@dimen/icon_image_height"
                 android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:scaleType="centerInside"
@@ -177,7 +189,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:gravity="center"
+                android:gravity="start"
                 android:hint="@string/btn_registration_confmpswd_text"
                 android:inputType="textPassword"
                 android:maxLines="1"

@@ -8,5 +8,6 @@ public class Constants {
 
     public static int SPLASH_TIME_OUT = 3000;
 
+    public static final String DEVICE_TYPE = "android";
 
 }

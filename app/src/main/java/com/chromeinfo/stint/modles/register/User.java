@@ -21,7 +21,8 @@ public class User {
     @SerializedName("username")
     String userName;
 
-    @SerializedName("moblie")
+
+    @SerializedName("mobile")
     String mobile;
 
     @SerializedName("password")
@@ -30,16 +31,28 @@ public class User {
 
     @SerializedName("device_type")
     String deviceType;
+    @SerializedName("register_id")
+    String registerId;
+
+    @SerializedName("device_id")
+    String deviceId;
+
+    public User(String email, String firstName, String lastName, String userName, String mobile, String password, String deviceType) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.mobile = mobile;
+        this.password = password;
+        this.deviceType = deviceType;
+        this.deviceId = "0";
+        this.registerId = "0";
+
+    }
 
     public String getDeviceType() {
         return deviceType;
     }
-
-    public User(){
-
-
-    }
-
 
     public String getLastName() {
         return lastName;
@@ -57,12 +70,12 @@ public class User {
         return userName;
     }
 
-    public String getMobile() {
-        return mobile;
-    }
 
     public String getPassword() {
         return password;
     }
 
+    public String getMobile() {
+        return mobile;
+    }
 }
