@@ -8,6 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 /* This class is a model of user registration page */
+
 public class User {
 
     @SerializedName("email")
@@ -30,12 +31,14 @@ public class User {
 
 
     @SerializedName("device_type")
+
     String deviceType;
     @SerializedName("register_id")
     String registerId;
 
     @SerializedName("device_id")
     String deviceId;
+
 
     public User(String email, String firstName, String lastName, String userName, String mobile, String password, String deviceType) {
         this.email = email;
@@ -45,8 +48,6 @@ public class User {
         this.mobile = mobile;
         this.password = password;
         this.deviceType = deviceType;
-        this.deviceId = "0";
-        this.registerId = "0";
 
     }
 

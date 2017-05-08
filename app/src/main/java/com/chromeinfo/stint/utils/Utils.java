@@ -2,6 +2,8 @@ package com.chromeinfo.stint.utils;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.widget.TextView;
@@ -109,5 +111,15 @@ public class Utils {
             dialog.dismiss();
         }
     }
+
+    public static void commonDialog(Context context, String message) {
+        AlertDialog.Builder al = new AlertDialog.Builder(context);
+        al.setMessage(message);
+        al.setPositiveButton("ok", new DialogChecker());
+        al.create();
+        al.show();
+    }
+
+
 
 }

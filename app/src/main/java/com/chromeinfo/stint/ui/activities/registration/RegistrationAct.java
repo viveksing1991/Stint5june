@@ -9,7 +9,8 @@ import android.widget.EditText;
 import com.chromeinfo.stint.R;
 import com.chromeinfo.stint.baseapp.BaseAppActivity;
 import com.chromeinfo.stint.modles.register.User;
-import com.chromeinfo.stint.networkoperation.callbacks.RestClient;
+import com.chromeinfo.stint.networkoperation.ApiResponse;
+import com.chromeinfo.stint.networkoperation.RestClient;
 import com.chromeinfo.stint.utils.Constants;
 import com.chromeinfo.stint.utils.Url;
 import com.chromeinfo.stint.utils.Utils;
@@ -101,15 +102,15 @@ public class RegistrationAct extends BaseAppActivity implements View.OnClickList
 
     private void registrationProcess() {
 
-        Call<User> uCall = (Call<User>) RestClient.getService().setUserRegistration(mEmail, mFirstName, mLastName, mUserName, mPhNo, mPassword, "0", "0", "android");
-        uCall.enqueue(new Callback<User>() {
+        Call<ApiResponse> uCall = RestClient.getService().setUserRegistration(mEmail, mFirstName, mLastName, mUserName, mPhNo, mPassword, "", "",Constants.DEVICE_TYPE);
+        uCall.enqueue(new Callback<ApiResponse>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
 
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<ApiResponse> call, Throwable t) {
 
             }
         });

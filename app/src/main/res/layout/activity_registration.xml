@@ -40,6 +40,7 @@
                 android:gravity="center"
                 android:hint="@string/edt_reg_first_name_text"
                 android:inputType="text"
+                android:maxLength="@integer/email_max_length"
                 android:maxLines="1"
                 android:nextFocusDown="@+id/edtLastName" />
 
@@ -55,6 +56,7 @@
                 android:gravity="center"
                 android:hint="@string/edt_reg_last_name_text"
                 android:inputType="text"
+                android:maxLength="@integer/email_max_length"
                 android:maxLines="1" />
         </LinearLayout>
 
@@ -83,6 +85,7 @@
                 android:background="@android:color/transparent"
                 android:hint="@string/edt_reg_email_text"
                 android:inputType="text"
+                android:maxLength="@integer/email_max_length"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
         </LinearLayout>
@@ -113,6 +116,7 @@
                 android:background="@android:color/transparent"
                 android:hint="@string/edt_reg_phn_text"
                 android:inputType="number"
+                android:maxLength="@integer/phone_number_max_length"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
         </LinearLayout>
@@ -142,6 +146,7 @@
                 android:background="@android:color/transparent"
                 android:hint="@string/edt_reg_username_text"
                 android:inputType="text"
+                android:maxLength="@integer/username_max_length"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
         </LinearLayout>
@@ -171,6 +176,7 @@
                 android:background="@android:color/transparent"
                 android:hint="@string/edt_reg_password_text"
                 android:inputType="textPassword"
+                android:maxLength="@integer/password_max_length"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
         </LinearLayout>
@@ -201,6 +207,7 @@
                 android:gravity="start"
                 android:hint="@string/btn_registration_confmpswd_text"
                 android:inputType="textPassword"
+                android:maxLength="@integer/password_max_length"
                 android:maxLines="1"
                 android:paddingLeft="@dimen/activity_horizontal_margin" />
         </LinearLayout>

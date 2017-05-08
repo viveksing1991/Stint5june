@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.chromeinfo.stint"
-        minSdkVersion 17
+        minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -32,5 +32,6 @@ dependencies {
     compile 'com.android.support:support-v4:25.2.0'
     compile 'com.android.support:design:25.2.0'
     testCompile 'junit:junit:4.12'
-
-    compile 'com.mcxiaoke.viewpagerindicator:library:2.4.1'}
+    compile 'com.mcxiaoke.viewpagerindicator:library:2.4.1'
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
+}

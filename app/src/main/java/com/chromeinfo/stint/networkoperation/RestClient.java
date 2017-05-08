@@ -1,8 +1,7 @@
-package com.chromeinfo.stint.networkoperation.callbacks;
+package com.chromeinfo.stint.networkoperation;
 
 import android.util.Base64;
 
-import com.chromeinfo.stint.networkoperation.callbacks.interceptor.MyAuthenticationInterceptor;
 import com.chromeinfo.stint.services.StintService;
 import com.chromeinfo.stint.utils.Url;
 

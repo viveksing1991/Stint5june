@@ -41,6 +41,7 @@
                 android:src="@drawable/email_icon" />
 
             <EditText
+                android:maxLength="@integer/email_max_length"
                 android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -72,6 +73,7 @@
                 android:src="@drawable/password_icon" />
 
             <EditText
+                android:maxLength="@integer/password_max_length"
                 android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -136,6 +138,7 @@
             android:background="@color/editTextBorder" />
 
         <Button
+            android:id="@+id/btnFacebookLogin"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"

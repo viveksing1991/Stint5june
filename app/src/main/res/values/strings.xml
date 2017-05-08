@@ -11,11 +11,11 @@
     <string name="edt_reg_password_text">PASSWORD</string>
     <string name="edt_reg_username_text">USERNAME</string>
     <string name="edt_reg_phn_text">PHONE NUMBER</string>
-    <string name="edt_reg_email_text">EMAIl</string>
+    <string name="edt_reg_email_text">EMAIL</string>
     <string name="edt_reg_first_name_text">FIRST NAME</string>
     <string name="edt_reg_last_name_text">LAST NAME</string>
     <string name="edt_frgtpswd_hint">Your Email</string>
-    <string name="facebook_app_id"></string>
+    <string name="facebook_app_id">1900625356819091</string>
     <string name="btn_tut_paypl_hint">Next</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -23,5 +23,24 @@
     <string name="title_activity_tutorial">TutorialActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <!--Progress Dialog-->
+
+    <string name="progress_dialog_login_message">Loading...</string>
+    <string name="login_successful">Successfully Login</string>
+    <string name="check_network_error">Oops something went wrong Please check your internet connection</string>
+
+    <!--Shared Preference-->
+    <string name="user_pref_name">userPref</string>
+
+    <string name="email">email</string>
+    <!--Integer Mode of Preferences-->
+    <integer name="user_preference_mode">0</integer>
+
+    <!--Integers for length of widgets  text-->
+    <integer name="password_max_length">150</integer>
+    <integer name="username_max_length">150</integer>
+    <integer name="phone_number_max_length">10</integer>
+    <integer name="email_max_length">150</integer>
 
 </resources>
