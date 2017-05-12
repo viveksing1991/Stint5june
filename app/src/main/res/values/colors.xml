@@ -10,4 +10,5 @@
     <color name="loginButton">#363B3F</color>
     <color name="btnBackgroundGplus">#DD4B39</color>
     <color name="btnBackgroundFb">#3b5998</color>
+    <color name="backgroundNavDrawer">#a5a7a9</color>
 </resources>

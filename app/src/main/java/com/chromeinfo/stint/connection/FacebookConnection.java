@@ -6,7 +6,10 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
-import com.chromeinfo.stint.R;
+import com.chromeinfo.stint.models.facebook.FbUserDetails;
+import com.chromeinfo.stint.networkoperation.api.ApiResponse;
+import com.chromeinfo.stint.networkoperation.api.RestClient;
+import com.chromeinfo.stint.networkoperation.callbacks.ICallbackNetwork;
 import com.chromeinfo.stint.utils.SharedPreference;
 import com.chromeinfo.stint.utils.Utils;
 import com.facebook.AccessToken;
@@ -21,9 +24,10 @@ import com.facebook.login.LoginResult;
 import org.json.JSONObject;
 
 import java.util.Arrays;
-import java.util.StringTokenizer;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by root on 3/5/17.
@@ -32,48 +36,31 @@ import retrofit2.Call;
 /*Class is used for Facebook connections */
 
 public class FacebookConnection {
-    private Activity mActivity;
-    private Context mContext;
-    private String mMessage;
-    private ProgressBar mProgressBar;
-    private Bitmap mScreen;
 
-    private SharedPreference sharedPreference;
+    private Activity mActivity;
 
     private CallbackManager callbackManager;
 
 
-   /* public FacebookConnection(Activity activity, Context context, String text, ProgressBar progressBar, Bitmap bmp) {
-        this.mMessage = "";
-        this.mContext = context;
-        this.mActivity = activity;
-        this.mProgressBar = progressBar;
-        this.mScreen = bmp;
-        this.mMessage = text;
-    }*/
-
     public FacebookConnection(Activity activity) {
 
         this.mActivity = activity;
+        iFaceBookCall = (ICallbackNetwork) activity;
     }
-
-    private static String APP_ID = null;
 
     private static String EXPIRES = "expires_in";
 
     public static AccessToken TOKEN = null;
 
-    private static final String KEY = "facebook_credantials";
-
-    private static String permissions[];
+    private static final String TAG = FacebookConnection.class.getSimpleName();
 
     private String email;
 
-    static {
-        APP_ID = "";
-        permissions = new String[]{"public_profile"};
-    }
+    private FbUserDetails fbDetails;
 
+    private ICallbackNetwork iFaceBookCall;
+
+    /*Method is used as callback Of facebook*/
 
     public CallbackManager callBack() {
 
@@ -82,8 +69,9 @@ public class FacebookConnection {
         return callbackManager;
     }
 
+    /*Method is usd to set the permissions */
     public void loginPermission() {
-        LoginManager.getInstance().logInWithReadPermissions(mActivity, Arrays.asList("public_profile", "user_friends", "email"));
+        LoginManager.getInstance().logInWithReadPermissions(mActivity, Arrays.asList("public_profile", "email"));
     }
 
     public void getInstance() {
@@ -93,20 +81,36 @@ public class FacebookConnection {
                 registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                             @Override
                             public void onSuccess(LoginResult loginResult) {
+
                                 TOKEN = loginResult.getAccessToken();
                                 EXPIRES = loginResult.getAccessToken().getExpires().toString();
                                 loginResult.getAccessToken().getUserId();
+
                                 Utils.logDebug("FacebookConnection", EXPIRES);
                                 Utils.logDebug("FacebookConnection", loginResult.getAccessToken().getUserId());
 
                                 GraphRequest graphRequest = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
                                     @Override
                                     public void onCompleted(JSONObject object, GraphResponse response) {
+
+                                        Utils.logDebug(TAG, "facebook Responce" + response.toString());
+
                                         email = response.getJSONObject().optString("email");
+
                                         Utils.logDebug("FacebookConnection", response.toString());
 
                                         Utils.logDebug("FacebookConnection", "email ID" + email);
+                                        if (email != null) {
+                                            facebookLoginApi(email);
+
+                                            fbDetails = new FbUserDetails(response.getJSONObject().optString("id"), response.getJSONObject().optString("name"), response.getJSONObject().optString("email"));
+
+                                            iFaceBookCall.userInfoFb(fbDetails);
+                                            Utils.logDebug(TAG, "" + fbDetails.getEmail());
+                                        }
                                     }
+
+
                                 });
                                 Bundle parameters = new Bundle();
                                 parameters.putString("fields", "id,name,email");
@@ -129,5 +133,24 @@ public class FacebookConnection {
 
                 );
 
+    }
+
+    private void facebookLoginApi(String email) {
+
+        Call<ApiResponse> apiResponseCall = RestClient.getService().facebookLogin(email, "", "", "android");
+        apiResponseCall.enqueue(new Callback<ApiResponse>() {
+            @Override
+            public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                if (response.body().error > 0) {
+                    Utils.logDebug(TAG, "In facebook login Api" + response.body().errorMessage);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse> call, Throwable t) {
+
+            }
+        });
     }
 }

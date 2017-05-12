@@ -1,7 +1,6 @@
 package com.chromeinfo.stint.services;
 
-import com.chromeinfo.stint.modles.register.User;
-import com.chromeinfo.stint.networkoperation.ApiResponse;
+import com.chromeinfo.stint.networkoperation.api.ApiResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -29,5 +28,15 @@ public interface StintService {
 
     @FormUrlEncoded
     @POST("checkFacebook")
-    public Call<ApiResponse> facebookLogin(@Field("email") String email,@Field("device_id") String deviceId, @Field("register_id") String registerId, @Field("device_type") String deviceType);
+    public Call<ApiResponse> facebookLogin(@Field("email") String email, @Field("device_id") String deviceId, @Field("register_id") String registerId, @Field("device_type") String deviceType);
+
+    @FormUrlEncoded
+    @POST("appuser/job")
+    public Call<ApiResponse> browseJob(@Field("user_id") String email);
+
+    @FormUrlEncoded
+    @POST("appuser/profile/setLocation")
+    public Call<ApiResponse> setUserLocation(@Field("user_id") String email, @Field("lat") String lat, @Field("lng") String lng, @Field("locatoin_name") String locationName, @Field("country") String country, @Field("state") String state);
+
+
 }

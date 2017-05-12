@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.chromeinfo.stint.R;
 
+/*Class is used as forgot password Activity*/
 public class ForgotPasswordAct extends AppCompatActivity {
 
     @Override

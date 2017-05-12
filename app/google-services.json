@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "931733860133",
+    "project_id": "firebase-stint"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931733860133:android:b27c7e7110a3dd43",
+        "android_client_info": {
+          "package_name": "com.chromeinfo.stint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931733860133-1099335t15mhm3pcg49s45580ufh01dh.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "931733860133-s5eo6cic0q0o22iatr4pkclqd8d2f746.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chromeinfo.stint",
+            "certificate_hash": "47ede71aa8922e6bef2191c307f5a41f26e0e30f"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqWeEGl2iHyM-r6LKpw1-Q9K5Kaq3GuIg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

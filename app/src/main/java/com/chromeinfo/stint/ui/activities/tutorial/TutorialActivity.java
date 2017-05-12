@@ -17,6 +17,7 @@ import com.viewpagerindicator.CirclePageIndicator;
 import java.util.ArrayList;
 import java.util.List;
 
+/*This class is used to show the tutorial to the user */
 public class TutorialActivity extends BaseAppActivity {
 
 

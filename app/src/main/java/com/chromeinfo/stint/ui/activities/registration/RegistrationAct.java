@@ -1,18 +1,20 @@
 package com.chromeinfo.stint.ui.activities.registration;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.chromeinfo.stint.R;
 import com.chromeinfo.stint.baseapp.BaseAppActivity;
-import com.chromeinfo.stint.modles.register.User;
-import com.chromeinfo.stint.networkoperation.ApiResponse;
-import com.chromeinfo.stint.networkoperation.RestClient;
+import com.chromeinfo.stint.helper.UserSessionManager;
+import com.chromeinfo.stint.models.facebook.FbUserDetails;
+import com.chromeinfo.stint.networkoperation.api.ApiResponse;
+import com.chromeinfo.stint.networkoperation.api.RestClient;
+import com.chromeinfo.stint.ui.activities.BrowseJobActivity.BrowseJobActivity;
+import com.chromeinfo.stint.ui.activities.login.LoginActivity;
 import com.chromeinfo.stint.utils.Constants;
-import com.chromeinfo.stint.utils.Url;
 import com.chromeinfo.stint.utils.Utils;
 
 import retrofit2.Call;
@@ -31,7 +33,6 @@ public class RegistrationAct extends BaseAppActivity implements View.OnClickList
 
     /* Widget Initialization End */
 
-
     private String mFirstName, mLastName, mEmail, mPhNo, mUserName, mPassword;
 
     @Override
@@ -40,11 +41,45 @@ public class RegistrationAct extends BaseAppActivity implements View.OnClickList
         setContentView(R.layout.activity_registration);
         setViewsReferences();
         setViewsListeners();
+        if (getIntent().getExtras() != null) {
+            if (getFbDataFromBundle()) {
+                setDataIntoViews();
+
+            } else {
+                if (getGplusData()) {
+                    setDataIntoViews();
+                }
+            }
+        }
     }
 
-    private User setUserInfo(String mEmail, String mFirstName, String mLastName, String mPhNo, String mUserName, String mPassword) {
 
-        return new User(mEmail, mFirstName, mLastName, mUserName, mPhNo, mPassword, Constants.DEVICE_TYPE);
+    private boolean getGplusData() {
+        Bundle b = getIntent().getExtras();
+        mEmail = b.getString("email");
+        mUserName = b.getString("userName");
+        return true;
+    }
+
+    private void setDataIntoViews() {
+        edtRegEmail.setText(mEmail);
+        if (mUserName != null) {
+            String[] value = mUserName.split(" ");
+            edtRegFirstName.setText(value[0]);
+            edtRegLastName.setText(value[1]);
+        }
+    }
+
+    private boolean getFbDataFromBundle() {
+
+        FbUserDetails fb = getIntent().getExtras().getParcelable("userFbInfo");
+        if (fb != null) {
+            mEmail = fb.getEmail();
+            mUserName = fb.getName();
+            edtRegEmail.setText(mEmail);
+            Utils.logDebug("RegistrationAct", "" + mEmail + " " + mUserName);
+            return true;
+        } else return false;
     }
 
     private void getUserInfo() {
@@ -93,27 +128,48 @@ public class RegistrationAct extends BaseAppActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.btnRegDone:
                 getUserInfo();
-                registrationProcess();
+                if (userValidation()) {
+                    registrationProcess();
+                }
                 break;
             default:
                 break;
         }
     }
 
+    private boolean userValidation() {
+        if (edtRegFirstName.getText().toString().length() <= 0) {
+            Utils.commonDialog(this, "first name should not be blank");
+        }
+
+        return false;
+    }
+
     private void registrationProcess() {
-
-        Call<ApiResponse> uCall = RestClient.getService().setUserRegistration(mEmail, mFirstName, mLastName, mUserName, mPhNo, mPassword, "", "",Constants.DEVICE_TYPE);
+        final UserSessionManager userSessionManager = new UserSessionManager(RegistrationAct.this);
+        Call<ApiResponse> uCall = RestClient.getService().setUserRegistration(mEmail, mFirstName, mLastName, mUserName, mPhNo, mPassword, "", "", Constants.DEVICE_TYPE);
         uCall.enqueue(new Callback<ApiResponse>() {
-            @Override
-            public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+                          @Override
+                          public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
 
-            }
+                              if (response.body().error > 0) {
+                                  Utils.createLongToast(getApplicationContext(), response.body().errorMessage);
+                                  startActivity(new Intent(RegistrationAct.this, LoginActivity.class));
+                                  Utils.createShortToast(getApplicationContext(), response.body().errorMessage);
+                              } else {
+                                  userSessionManager.createUserLoginSession(mEmail, mUserName);
+                                  Intent intent = new Intent(RegistrationAct.this, BrowseJobActivity.class);
+                                  startActivity(intent);
+                              }
+                          }
 
-            @Override
-            public void onFailure(Call<ApiResponse> call, Throwable t) {
+                          @Override
+                          public void onFailure(Call<ApiResponse> call, Throwable t) {
 
-            }
-        });
+                          }
+                      }
+
+        );
 
 
     }

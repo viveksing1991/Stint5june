@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">20dp</dimen>
     <dimen name="activity_vertical_margin">20dp</dimen>
@@ -56,4 +56,14 @@
     <dimen name="strok_circle">1dp</dimen>
     <dimen name="radius_circle">7dp</dimen>
 
+    <dimen name="search_ll_width_40">35dp</dimen>
+
+    <!--Dimen toolbar Image-->
+    <dimen name="imv_toolbar_height">25dp</dimen>
+    <dimen name="imv_toolbar_width">25dp</dimen>
+
+    <dimen name="design_navigation_icon_size" tools:override="true">15dp</dimen>
+
+    <dimen name="margin_browse_icon_clock">30dp</dimen>
+    <dimen name="margin_browse_text">30dp</dimen>
 </resources>

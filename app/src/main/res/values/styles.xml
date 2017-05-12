@@ -30,6 +30,7 @@
         <item name="vpiCirclePageIndicatorStyle">@style/CustomCirclePageIndicator</item>
     </style>
 
+
     <style name="CustomCirclePageIndicator">
         <item name="fillColor">#ece8e8</item>
         <item name="strokeColor">#cac7c7</item>
@@ -37,4 +38,5 @@
         <item name="radius">6dp</item>
         <item name="centered">true</item>
     </style>
+
 </resources>

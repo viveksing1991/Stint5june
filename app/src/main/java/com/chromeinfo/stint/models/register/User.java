@@ -1,4 +1,4 @@
-package com.chromeinfo.stint.modles.register;
+package com.chromeinfo.stint.models.register;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -38,6 +38,9 @@ public class User {
 
     @SerializedName("device_id")
     String deviceId;
+
+    @SerializedName("user_location")
+    public UserLocation userLocation;
 
 
     public User(String email, String firstName, String lastName, String userName, String mobile, String password, String deviceType) {

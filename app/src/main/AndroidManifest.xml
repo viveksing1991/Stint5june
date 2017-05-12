@@ -19,6 +19,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
             android:name=".ui.activities.login.LoginActivity"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".ui.activities.splash.SplashAct">
@@ -30,6 +31,8 @@
         </activity>
         <activity
             android:name=".ui.activities.registration.RegistrationAct"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".ui.activities.forgotpass.ForgotPasswordAct" />
 
@@ -40,9 +43,12 @@
         <activity
             android:name=".ui.activities.tutorial.TutorialActivity"
             android:label="@string/title_activity_tutorial"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:launchMode="singleInstance" />
         <activity android:name=".ui.activities.BrowseJobActivity.BrowseJobActivity"></activity>
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
     </application>
 
 </manifest>

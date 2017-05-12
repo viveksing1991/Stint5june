@@ -33,6 +33,8 @@
     <!--Shared Preference-->
     <string name="user_pref_name">userPref</string>
 
+    <string name="user_location_pref">userLocPref</string>
+
     <string name="email">email</string>
     <!--Integer Mode of Preferences-->
     <integer name="user_preference_mode">0</integer>
@@ -43,4 +45,16 @@
     <integer name="phone_number_max_length">10</integer>
     <integer name="email_max_length">150</integer>
 
+    <!--Browse Job-->
+    <string name="browse_job_search">Search</string>
+
+    <!--Validation Text-->
+    <string name="email_empty">Please check , No input in emailbox </string>
+    <string name="password_empty">Please input something  in passoword </string>
+    <string name="not_valid_email">Not a valid email</string>
+
+    <!--Navigation list text-->
+    <string name="browse_job_nav">Browse Job</string>
+
+    <string name="title_POST_JOB">POST JOB</string>
 </resources>

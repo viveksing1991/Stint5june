@@ -1,8 +1,11 @@
 package com.chromeinfo.stint.utils;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
@@ -14,6 +17,8 @@ import java.util.regex.Pattern;
 /**
  * Created by root on 1/5/17.
  */
+
+/*Class provide utility methods for all the other class*/
 
 public class Utils {
 
@@ -83,11 +88,15 @@ public class Utils {
      * @return
      */
     public static final boolean isValidEmail(String email) {
-        String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        return Pattern.compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$").matcher(email).matches();
+        return Pattern.compile("^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$").matcher(email).matches();
     }
 
-
+    /*Method is used to show the no internet dialog */
     public static void noInternetDailog(Context context) {
         AlertDialog.Builder noInternet = new AlertDialog.Builder(context);
         TextView title = new TextView(context);
@@ -103,6 +112,7 @@ public class Utils {
         noInternet.show();
     }
 
+    /*Class is used for dialog */
     private static class DialogChecker implements DialogInterface.OnClickListener {
         DialogChecker() {
         }
@@ -112,6 +122,7 @@ public class Utils {
         }
     }
 
+    /*Method is used for common dialog for all the app where  it is used */
     public static void commonDialog(Context context, String message) {
         AlertDialog.Builder al = new AlertDialog.Builder(context);
         al.setMessage(message);
@@ -120,6 +131,41 @@ public class Utils {
         al.show();
     }
 
+    /*Method is used to check the internet*/
+    public static boolean checkInternet(Context context) {
 
+        boolean isConnected = false;
+        try {
 
+            NetworkInfo networkInfo = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+            if (networkInfo == null && !networkInfo.isConnectedOrConnecting()) {
+                isConnected = false;
+            } else
+                isConnected = true;
+
+        } catch (Exception e) {
+
+        }
+        return isConnected;
+    }
+
+    /*This method is used to show tje dialo,g box*/
+    public static void showDialog(Context context, String title, String msg) {
+        android.app.AlertDialog.Builder alertDialog = new android.app.AlertDialog.Builder(context);
+        alertDialog.setMessage(msg);
+        TextView title_text = new TextView(context);
+        title_text.setText(title);
+        title_text.setPadding(10, 10, 10, 10);
+        title_text.setGravity(17);
+        title_text.setTextColor(-1);
+        title_text.setTextSize(20.0f);
+        alertDialog.setCustomTitle(title_text);
+        alertDialog.setCancelable(true);
+        alertDialog.setPositiveButton("OK", new DialogChecker());
+        try {
+            alertDialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

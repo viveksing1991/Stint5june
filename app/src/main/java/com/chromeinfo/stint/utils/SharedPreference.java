@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.Preference;
 
+import com.google.gson.Gson;
+
 /**
  * Created by root on 8/5/17.
  */
-
+/*Class used for sharef preferences*/
 public class SharedPreference {
 
 
@@ -57,6 +59,25 @@ public class SharedPreference {
 
         editor.remove(prefKeys);
         editor.commit();
+    }
+
+    public void saveObject(Context context, Object obj, String prefName, String prefKeys) {
+        SharedPreferences settings;
+
+        settings = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor prefsEditor = settings.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(obj);
+        prefsEditor.putString("MyObject", json);
+        prefsEditor.commit();
+    }
+
+    public SharedPreferences retrieveObj(Context context, String prefName, String prefKeys) {
+        SharedPreferences settings;
+        settings = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+
+        return settings;
     }
 }
 

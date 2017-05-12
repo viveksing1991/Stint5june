@@ -151,6 +151,7 @@
             android:textColor="@android:color/white" />
 
         <Button
+            android:id="@+id/btnGplusLogin"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
